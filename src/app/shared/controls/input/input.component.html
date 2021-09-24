@@ -1,0 +1,9 @@
+<input
+    type="text"
+    [value]="value"
+    (keyup) = "onKeyUp($event.target.value)"
+    class="app-input"
+    (blur)="onBlur()"
+    [disabled] = "isDisabled"
+    [placeholder] = "placeholder"
+>
