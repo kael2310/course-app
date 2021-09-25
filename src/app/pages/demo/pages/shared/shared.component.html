@@ -12,8 +12,13 @@
 
 
 <form action="" [formGroup]="form">
+
     <app-form-field [label]="'Email'" [required]="true" [control]="form.controls.email" [isInline]="isInline" [regexMessage]="regexErrorMessage.email">
         <app-input formControlName="email" [placeholder]="'Email'"></app-input>
+    </app-form-field>
+
+    <app-form-field [label]="'Password'" [required]="true" [control]="form.controls.password" [isInline]="isInline">
+        <app-password formControlName="password" [placeholder]="'Password'"></app-password>
     </app-form-field>
 </form>
 

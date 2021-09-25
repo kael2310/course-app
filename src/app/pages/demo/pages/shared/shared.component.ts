@@ -25,6 +25,11 @@ export class SharedComponent implements OnInit {
                 Validators.maxLength(10),
                 Validators.pattern(regex.email)
             ]
+        }),
+        password: new FormControl(null, {
+            validators: [
+                Validators.required
+            ]
         })
     })
 
