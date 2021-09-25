@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { regex, regexErrorsMessage } from '@app/shared';
 
 @Component({
     selector: 'app-shared',
@@ -8,13 +9,21 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class SharedComponent implements OnInit {
 
+    isInline: boolean = true
+    regexErrorMessage = regexErrorsMessage;
+
     form = this.fb.group({
-        input: new FormControl({
+        email: new FormControl({
             value: '',
             disabled: false
         }, {
             validators: [
-                Validators.required
+                Validators.required,
+                Validators.min(3),
+                Validators.max(10),
+                Validators.minLength(3),
+                Validators.maxLength(10),
+                Validators.pattern(regex.email)
             ]
         })
     })
@@ -24,11 +33,17 @@ export class SharedComponent implements OnInit {
         private fb: FormBuilder
     ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+
+    }
 
     onFetchValue(){
         this.form.patchValue({
             input: "hello"
         })
+    }
+
+    onToggleInline(){
+        this.isInline = !this.isInline
     }
 }

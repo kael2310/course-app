@@ -1,18 +1,20 @@
 <h2>Form</h2>
 
 <div class="shared-button">
-    <app-button>
-        Test Button
-    </app-button>
-
     <app-button (click)="onFetchValue()">
         Fetch Value
+    </app-button>
+
+    <app-button (click)="onToggleInline()">
+        Toggle Inline
     </app-button>
 </div>
 
 
 <form action="" [formGroup]="form">
-    <app-input formControlName="input" [placeholder]="'Input'"></app-input>
+    <app-form-field [label]="'Email'" [required]="true" [control]="form.controls.email" [isInline]="isInline" [regexMessage]="regexErrorMessage.email">
+        <app-input formControlName="email" [placeholder]="'Email'"></app-input>
+    </app-form-field>
 </form>
 
 <code>
