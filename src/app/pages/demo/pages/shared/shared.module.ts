@@ -7,6 +7,7 @@ import { ButtonModule, ButtonsModule } from '@app/shared';
 import { ControlsModule, FormFieldModule } from '@app/shared/controls';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from '@app/shared/controls/password/password.module';
+import { CheckboxesModule } from '@app/shared/controls/checkboxes/checkboxes.module';
 
 @NgModule({
     declarations: [SharedComponent],
@@ -17,7 +18,8 @@ import { PasswordModule } from '@app/shared/controls/password/password.module';
         ControlsModule,
         ReactiveFormsModule,
         FormFieldModule,
-        PasswordModule
+        PasswordModule,
+        CheckboxesModule
     ],
 })
 export class SharedModule {}

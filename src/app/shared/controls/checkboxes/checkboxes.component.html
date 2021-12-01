@@ -1,0 +1,9 @@
+<div class="checkboxes">
+        <label class="checkbox" [class.checkbox_disabled]="isDisabled">
+            items
+            <input type="checkbox" class="checkbox__input" [value]="value"
+                [attr.disabled]="isDisabled ? true : null"
+                (change)="onChanged()" [attr.checked]="value" [checked]="isChecked()">
+            <span class="checkbox__checkmark"></span>
+        </label>
+</div>
